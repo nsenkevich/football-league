@@ -13,15 +13,22 @@ services:
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
-    App\:
+    Championship\:
         resource: '../src/*'
         exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
-    App\Controller\:
-        resource: '../src/Controller'
+    Championship\Application\Resource\:
+        resource: '../src/Application/Resource'
         tags: ['controller.service_arguments']
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    Doctrine\ORM\EntityManager:
+        factory:   'Championship\Infrastructure\DoctrineSql\EntityManagerFactory:create'
+        arguments:  ['/League//mapping', 'true']
+
+    Championship\Infrastructure\DoctrineSql\League\LeagueRepository:
+    Championship\Application\Service\League\LeagueService:
+
