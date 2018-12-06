@@ -14,11 +14,10 @@ class EntityManagerFactory
     public static function create($paths, $isDevMode): EntityManager
     {
 
-        $dbParams = ['driver' => 'pdo_sqlite', 'path' => __DIR__ . '/db.sqlite'];
+        $dbParams = ['driver' => 'pdo_sqlite', 'path' => __DIR__ . '../../../../var/db.sqlite'];
         Type::addType('LeagueId', DoctrineLeagueId::class);
         Type::addType('TeamId', DoctrineTeamId::class);
 
-        //var_dump($paths);exit;
         $config = Setup::createXMLMetadataConfiguration([__DIR__ . $paths], $isDevMode);
         $entityManager =  EntityManager::create($dbParams, $config);
 
