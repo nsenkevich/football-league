@@ -1,4 +1,4 @@
-# football-league
+# Football-league
 Football league
 
 ##Api Folder structure
@@ -6,7 +6,7 @@ Football league
 2. Aplication - application level (request response handling, data formating).
 3. Infrastructure - infrastructure level (doctrine/sql specific implementation).
 
-see http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+for more info see http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 
 - to load dependencies composer update
 
