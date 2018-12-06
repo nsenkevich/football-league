@@ -8,10 +8,10 @@ Football league
 
 see http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 
-require php7
+- to load dependencies composer update
 
-don't forget composer update
+- to run php -S 127.0.0.1:8000 -t public
 
-for phpunit vendor/bin/phpunit
+- for phpunit vendor/bin/phpunit
 
-for postman tests use Championship.postman_collection
+- for postman tests use Championship.postman_collection
