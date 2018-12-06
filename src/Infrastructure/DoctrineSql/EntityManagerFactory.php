@@ -13,7 +13,6 @@ class EntityManagerFactory
 {
     public static function create($paths, $isDevMode): EntityManager
     {
-
         $dbParams = ['driver' => 'pdo_sqlite', 'path' => __DIR__ . '../../../../var/db.sqlite'];
         Type::addType('LeagueId', DoctrineLeagueId::class);
         Type::addType('TeamId', DoctrineTeamId::class);

@@ -43,7 +43,7 @@ class LeagueResourceTest extends TestCase
     public function testUpdateTeam()
     {
         $expected = new JsonResponse(['success' => true], 200);
-        $request = new Request([],[],[],[],[],[],json_encode(['name' => 'chelsea', 'strip' => 'blue']));
+        $request = new Request([], [], [], [], [], [], json_encode(['name' => 'chelsea', 'strip' => 'blue']));
 
         $this->leagueService->method('updateTeam')->with('5c0841aeefd50', '5c0841c053a87', 'chelsea', 'blue')->willReturn(true);
         $this->assertEquals($expected, $this->resorce->updateTeam('5c0841aeefd50', '5c0841c053a87', $request));
@@ -52,7 +52,7 @@ class LeagueResourceTest extends TestCase
     public function testCreateLeague()
     {
         $expected = new JsonResponse(["id" => "5c0841c053a87","name" => "manchester united","strip" => "red"], 201);
-        $request = new Request([],[],[],[],[],[],json_encode(['name' => 'chelsea', 'strip' => 'blue']));
+        $request = new Request([], [], [], [], [], [], json_encode(['name' => 'chelsea', 'strip' => 'blue']));
 
         $leagueId = LeagueId::create('5c0841aeefd50');
         $league = new League($leagueId, 'Premier');
@@ -67,7 +67,7 @@ class LeagueResourceTest extends TestCase
     public function testCreateTeam()
     {
         $expected = new JsonResponse(["id" => "5c0841c053a87","name" => "Premier"], 201);
-        $request = new Request([],[],[],[],[],[],json_encode(['name' => 'Premier']));
+        $request = new Request([], [], [], [], [], [], json_encode(['name' => 'Premier']));
 
         $leagueId = LeagueId::create('5c0841c053a87');
         $league = new League($leagueId, 'Premier');
@@ -99,7 +99,7 @@ class LeagueResourceTest extends TestCase
     public function testValidationErrorWhenCreateLeague()
     {
         $expected = new JsonResponse(['errors' => 'test'], 422);
-        $request = new Request([],[],[],[],[],[],json_encode(['name' => 'Premier']));
+        $request = new Request([], [], [], [], [], [], json_encode(['name' => 'Premier']));
 
         $this->leagueService->method('createLeague')->with('Premier')->will($this->throwException(new Exception('test')));
 

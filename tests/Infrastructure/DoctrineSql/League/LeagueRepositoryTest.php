@@ -39,7 +39,6 @@ class LeagueRepositoryTest extends TestCase
         $schemaTool->createSchema($classes);
 
         $this->leagueRepository = new LeagueRepository($entityManager);
-
     }
 
     public function testItShouldAddTeamToLeague()
@@ -67,5 +66,4 @@ class LeagueRepositoryTest extends TestCase
         $this->leagueRepository->remove($league);
         $this->assertNull($this->leagueRepository->leagueOfId($id));
     }
-
 }

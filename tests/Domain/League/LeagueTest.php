@@ -11,7 +11,6 @@ use PHPUnit\Framework\TestCase;
 
 final class LeagueTest extends TestCase
 {
-
     public function testAddTeam()
     {
         $this->expectException(InvalidArgumentException::class);

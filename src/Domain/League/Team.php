@@ -69,5 +69,4 @@ class Team
     {
         return $this->league;
     }
-
 }

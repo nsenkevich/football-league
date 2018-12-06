@@ -12,7 +12,6 @@ use InvalidArgumentException;
 
 class LeagueService
 {
-
     private $leagueRepository;
 
     public function __construct(LeagueRepository $leagueRepository)
@@ -83,5 +82,4 @@ class LeagueService
 
         return $team;
     }
-
 }
