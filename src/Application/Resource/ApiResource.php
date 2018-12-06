@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Championship\Application\Resource;
 
@@ -9,7 +10,7 @@ class ApiResource
 {
     protected $statusCode = 200;
 
-    public function getStatusCode(): string
+    public function getStatusCode(): int
     {
         return $this->statusCode;
     }
