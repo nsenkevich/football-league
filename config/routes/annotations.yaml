@@ -1,0 +1,3 @@
+controllers:
+    resource: ../../src/Application/Resource
+    type: annotation
