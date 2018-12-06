@@ -2,7 +2,7 @@
 Football league
 
 ##Api Folder structure
-1. Domain - domain level.
+1. Domain - domain level (aggregate root, entities, value objects).
 2. Aplication - application level (request response handling, data formating).
 3. Infrastructure - infrastructure level (doctrine/sql specific implementation).
 
